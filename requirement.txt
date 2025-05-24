@@ -1,0 +1,8 @@
+torch
+pennylane
+matplotlib
+seaborn
+numpy
+pandas
+scikit-learn
+cvxpy
