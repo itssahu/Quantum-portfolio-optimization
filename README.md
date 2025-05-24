@@ -42,9 +42,9 @@ This project combines Quantum Generative Adversarial Networks (QGANs) and Variat
 ## 4.Portfolio Optimization using VQE
 ### 4.1 Objective Function
 Minimize portfolio variance:
-\[
-\min_w \; w^\top \Sigma w
-\]
+![image](https://github.com/user-attachments/assets/453fc057-2fac-438d-9b89-62085952a9ca)
+![image](https://github.com/user-attachments/assets/e420d98f-39fe-4607-889c-55c93daf02d1)
+
 
 ### 4.2 Circuit Details
 - **Ansatz**: RY rotations + CNOTs
