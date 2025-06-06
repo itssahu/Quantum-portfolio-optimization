@@ -29,11 +29,15 @@ This project combines Quantum Generative Adversarial Networks (QGANs) and Variat
 ## 2. Synthetic Data Generation using QGAN
 ### 2.1 Architecture
 - **Quantum Generator**: 
-  - `AngleEmbedding` + `BasicEntanglerLayers` (Pennylane)
-  - 4 qubits, 3 layers
-  - Output from PauliZ expectation on one qubit
+Pennylane Layers: AngleEmbedding encodes classical returns into quantum states.
+
+Entanglement: BasicEntanglerLayers introduces quantum correlations.
+
+Qubits: 4 (each encoding amplitude data)
+
+Output: Measured using PauliZ expectation values.
 - **Classical Discriminator**:
-  - 1 hidden layer MLP
+  - A basic MLP (Multi-Layer Perceptron) with one hidden layer to differentiate real vs. fake samples.
 
 ### 2.2 Training Setup
 - **Epochs**: 1000
@@ -47,7 +51,9 @@ This project combines Quantum Generative Adversarial Networks (QGANs) and Variat
 ![image](https://github.com/user-attachments/assets/1b03abfc-9989-4ca7-984f-47a513ff799f)
 ![image](https://github.com/user-attachments/assets/60efda99-1285-406d-a6a3-6aa83bcb3ab9)
 ## 3. Covariance Matrix Computation
-
+Generated Returns were used to compute the empirical covariance matrix:
+![image](https://github.com/user-attachments/assets/4b3c8593-8b52-485b-a0f2-991756eb3333)
+where R is the matrix of QGAN returns.
 - **Input**: QGAN-generated returns
 - **Output**: `cov_matrix.npy` used in VQE
 ![image](https://github.com/user-attachments/assets/46898862-1232-4367-b5f8-34d55425580f)
@@ -59,7 +65,7 @@ Minimize portfolio variance:
 
 
 ### 4.2 Circuit Details
-- **Ansatz**: RY rotations + CNOTs
+- **Ansatz**: Uses RY (rotation-Y) gates followed by CNOT gates to entangle
 - **Qubits**: 5 (1 per asset)
 - **Optimizer**: Nesterov Momentum
 - **Steps**: 100
@@ -89,17 +95,22 @@ Minimize portfolio variance:
 ## 6. Advanced Analyses
 ### 6.1 Correlation Matrix (QGAN Data)
 ![image](https://github.com/user-attachments/assets/48b63ff3-3e88-4bb0-8515-67287f15ef3a)
+Validates structure of synthetic data.
+Crypto assets typically exhibit lower correlation with equities.
 ### 6.2 PCA on Generated Returns
 ![image](https://github.com/user-attachments/assets/b50030fe-8584-482f-ad18-e95a1c1e75ed)
 - **Explained Variance**:
-  - PC1: 70.2%
-  - PC2: 25.4%
+  - PC1: 70.2% (Dominated by common trends (likely equities))
+  - PC2: 25.4% (Likely explains crypto variance)
 ## 7. Performance Metrics
 
 | Metric                       | Quantum VQE | Classical CVXPY |
 |-----------------------------|-------------|------------------|
 | Sharpe Ratio                | 0.028       | 0.030            |
 | Max Drawdown                | -35.31%     | -26.19%          |
+Interpretation:
+Sharpe ratio is comparable.
+VQE has higher drawdown, potentially due to overemphasis on AAPL (high weight).
 ## 8.  Industry Applications
 
 - **Asset Management**: Synthetic stress-testing and low-risk portfolio design
