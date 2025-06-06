@@ -68,17 +68,17 @@ encoded this as a quantum Hamiltonian minimization.
 
 Here:
 
-    ∣ψ(θ)⟩∣ψ(θ)⟩: output of a variational quantum circuit (Ansatz)
-
+    ∣ψ(θ)⟩: output of a variational quantum circuit (Ansatz)
+    ∣ψ(θ)⟩=U(θ)∣0⟩⊗d,Where U(θ) includes RYRY rotations and CNOT entanglement.
     H: operator encoding the quadratic form of variance
-
+    E(θ)=⟨ψ(θ)∣H∣ψ(θ)⟩ (Cost function)
     θ: tunable circuit parameters
 
 
 ### 4.2 Circuit Details
 - **Ansatz**: Uses RY (rotation-Y) gates followed by CNOT gates to entangle
 - **Qubits**: 5 (1 per asset)
-- **Optimizer**: Nesterov Momentum
+- **Optimizer**: Nesterov Momentum (Update θ to minimize E(θ) using Nesterov Momentum(vt+1​=μvt​−η∇J(θt​+μvt​), θt+1​=θt​+vt+1​, Instead of evaluating gradient at θt​, it evaluates it at the look-ahead position θt+μvt.)
 - **Steps**: 100
 
 ### 4.3 Portfolio Weights (Final)
