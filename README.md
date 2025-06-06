@@ -53,6 +53,7 @@ Output: Measured using PauliZ expectation values.
 ## 3. Covariance Matrix Computation
 Generated Returns were used to compute the empirical covariance matrix:
 ![image](https://github.com/user-attachments/assets/4b3c8593-8b52-485b-a0f2-991756eb3333)
+
 where R is the matrix of QGAN returns.
 - **Input**: QGAN-generated returns
 - **Output**: `cov_matrix.npy` used in VQE
