@@ -20,7 +20,8 @@ This project combines Quantum Generative Adversarial Networks (QGANs) and Variat
 - **Time Range**: `2022-01-01` to `2024-12-31`
 - **Transformation**: 
   - Adjusted close prices extracted
-  - Log returns computed: `log(1 + pct_change)`
+  - Log returns computed:![image](https://github.com/user-attachments/assets/6112718e-1baf-487a-9b37-381b99970708)
+
 - **Saved Files**:
   - `data/historical_prices.csv`
   - `data/log_returns.csv`
