@@ -78,7 +78,7 @@ Here:
 ### 4.2 Circuit Details
 - **Ansatz**: Uses RY (rotation-Y) gates followed by CNOT gates to entangle
 - **Qubits**: 5 (1 per asset)
-- **Optimizer**: Nesterov Momentum (Update θ to minimize E(θ) using Nesterov Momentum(vt+1​=μvt​−η∇J(θt​+μvt​), θt+1​=θt​+vt+1​, Instead of evaluating gradient at θt​, it evaluates it at the look-ahead position θt+μvt.)
+- **Optimizer**: Nesterov Momentum (Update θ to minimize E(θ) using Nesterov Momentum (vt+1​=μvt​−η∇J(θt​+μvt​), θt+1​=θt​+vt+1​, Instead of evaluating gradient at θt​, it evaluates it at the look-ahead position θt+μvt).
 - **Steps**: 100
 
 ### 4.3 Portfolio Weights (Final)
