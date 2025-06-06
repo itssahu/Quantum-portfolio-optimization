@@ -5,6 +5,17 @@ This project combines Quantum Generative Adversarial Networks (QGANs) and Variat
 - **Assets Used**:
   - Equities: `SPY`, `AAPL`, `MSFT`
   - Cryptocurrencies: `BTC-USD`, `ETH-USD`
+  - Details:
+
+    SPY: SPDR S&P 500 ETF Trust (tracks the S&P 500 index)
+
+    AAPL: Apple Inc. (Technology stock)
+
+    MSFT: Microsoft Corporation (Technology stock)
+
+    BTC-USD: Bitcoin (cryptocurrency)
+
+    ETH-USD: Ethereum (cryptocurrency)
 - **Source**: Yahoo Finance API
 - **Time Range**: `2022-01-01` to `2024-12-31`
 - **Transformation**: 
