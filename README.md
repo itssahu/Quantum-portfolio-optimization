@@ -62,8 +62,10 @@ where R is the matrix of QGAN returns.
 ### 4.1 Objective Function
 Minimize portfolio variance:
 ![image](https://github.com/user-attachments/assets/d34bb6d5-67b1-4a97-9e46-36e8e5b2701e)
+
 encoded this as a quantum Hamiltonian minimization.
 ![image](https://github.com/user-attachments/assets/2ca09ade-4d2d-4546-ba6d-21ac634c8768)
+
 Here:
 
     ∣ψ(θ)⟩∣ψ(θ)⟩: output of a variational quantum circuit (Ansatz)
