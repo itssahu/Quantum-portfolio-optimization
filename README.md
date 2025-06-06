@@ -61,8 +61,16 @@ where R is the matrix of QGAN returns.
 ## 4.Portfolio Optimization using VQE
 ### 4.1 Objective Function
 Minimize portfolio variance:
-![image](https://github.com/user-attachments/assets/453fc057-2fac-438d-9b89-62085952a9ca)
-![image](https://github.com/user-attachments/assets/e420d98f-39fe-4607-889c-55c93daf02d1)
+![image](https://github.com/user-attachments/assets/d34bb6d5-67b1-4a97-9e46-36e8e5b2701e)
+encoded this as a quantum Hamiltonian minimization.
+![image](https://github.com/user-attachments/assets/2ca09ade-4d2d-4546-ba6d-21ac634c8768)
+Here:
+
+    ∣ψ(θ)⟩∣ψ(θ)⟩: output of a variational quantum circuit (Ansatz)
+
+    H: operator encoding the quadratic form of variance
+
+    θ: tunable circuit parameters
 
 
 ### 4.2 Circuit Details
